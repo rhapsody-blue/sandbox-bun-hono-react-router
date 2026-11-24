@@ -1,0 +1,25 @@
+{
+  "name": "sandbox-bun-hono-react-router",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --parallel --filter './packages/*' dev",
+    "build": "bun run --filter './packages/*' build",
+    "typecheck": "bun run --filter '*' typecheck",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "check": "biome check .; BIOME=$?; bun run typecheck; TYPECHECK=$?; exit $((BIOME + TYPECHECK))"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.9",
+    "@types/bun": "latest",
+    "typescript": "^7"
+  },
+  "dependencies": {
+    "msw": "^3.0.8",
+    "zod": "^4.6.7"
+  }
+}

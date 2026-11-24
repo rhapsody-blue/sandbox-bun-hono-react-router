@@ -1,0 +1,9 @@
+{
+  "name": "Bun Hono React Router",
+  "dockerComposeFile": "../compose.yaml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "overrideCommand": false,
+  "shutdownAction": "stopCompose",
+  "forwardPorts": [3000, 5173]
+}
