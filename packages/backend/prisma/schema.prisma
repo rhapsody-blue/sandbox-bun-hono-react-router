@@ -12,6 +12,7 @@ datasource db {
 
 model Task {
   id          String   @id @default(cuid())
+  ownerId     String
   title       String
   description String?
   status      String   @default("TODO")
@@ -21,4 +22,17 @@ model Task {
   updatedAt   DateTime @updatedAt
 
   @@map("tasks")
+}
+
+model CasbinRule {
+  id    Int     @id @default(autoincrement())
+  ptype String
+  v0    String?
+  v1    String?
+  v2    String?
+  v3    String?
+  v4    String?
+  v5    String?
+
+  @@map("casbin_rule")
 }
